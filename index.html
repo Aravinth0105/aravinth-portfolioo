@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f7ecf5;
+      }
+
+      nav {
+        background-color: #f383f4;
+        padding: 10px;
+        text-align: center;
+        
+      }
+
+      nav a {
+        color: whitesmoke;
+        text-decoration: none;
+        padding: 10px 20px;
+        display: inline-block;
+      }
+      .container a{
+        text-decoration: none;
+        color: white;
+        border-radius: 10px;
+      }
+
+      .button {
+        background-color: #bda4ee;
+        padding: 10px;
+        margin: 20px;
+        text-decoration: none;
+      }
+      @media screen and (max-width: 600px) {
+        nav {
+          display: block;
+          text-align: left;
+        }
+
+        nav a {
+          display: block;
+          width: 100%;
+          box-sizing: border-box;
+          border-bottom: 1px solid #555;
+        }
+
+        .row {
+          flex-direction: column;
+          align-items: start;
+        }
+
+        .text-column,
+        .cube-container {
+          width: 100%;
+          text-align: start;
+          margin: 20px 0;
+        }
+
+        .cube-container {
+          perspective: 700px;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 50px auto;
+        max-width: 1000px;
+      }
+
+      .text-column {
+        flex: 1;
+        padding: 20px;
+      }
+
+      .cube-container {
+        perspective: 3000px;
+        width: 200px;
+        height: 200px;
+      }
+
+      .cube {
+        position: relative;
+        transform-style: preserve-3d;
+        animation: rotateCube 5s infinite linear;
+        width: 70%;
+        height: 70%;
+      }
+      @media screen and (max-width: 600px) {
+        .cube {
+          position: relative;
+          transform-style: preserve-3d;
+          animation: rotateCube 5s infinite linear;
+          width: 100%;
+          height: 100%;
+          right: 50px;
+        }
+      }
+      .face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: rgba(208, 178, 216, 0.8); 
+  border-radius: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px); 
+  border: 1px solid rgba(255, 255, 255, 0.5); 
+}
+
+      .face:nth-child(1) {
+        transform: rotateY(0deg) translateZ(100px);
+      }
+      .face:nth-child(2) {
+        transform: rotateY(90deg) translateZ(100px);
+      }
+      .face:nth-child(3) {
+        transform: rotateY(180deg) translateZ(100px);
+      }
+      .face:nth-child(4) {
+        transform: rotateY(-90deg) translateZ(100px);
+      }
+      .face:nth-child(5) {
+        transform: rotateX(90deg) translateZ(100px);
+      }
+      .face:nth-child(6) {
+        transform: rotateX(-90deg) translateZ(100px);
+      }
+
+      @keyframes rotateCube {
+        0% {
+          transform: rotateX(0) rotateY(0);
+        }
+        100% {
+          transform: rotateX(360deg) rotateY(360deg);
+        }
+      }
+      .btn {
+        background-color: #bda4ee;
+      }
+      .container-link {
+  background-color: #f7ecf5;
+  padding: 20px;
+}
+
+.links h2 {
+  color: white;
+}
+
+.imgg {
+  display: flex;
+  justify-content: center;
+ 
+}
+
+.link-item {
+  text-decoration: none;
+  color: inherit;
+  margin: 25px;
+}
+
+.square {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white; 
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.square img {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%; 
+}
+
+.square h5 {
+  margin-top: 10px;
+  color: #f383f4;
+}
+
+@media screen and (max-width: 800px) {
+  .cube {
+   position: absolute;
+   top: 200px;
+
+  }
+}
+
+     
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="#">Portfolio</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-column">
+          <h1 style="margin: 30px;color: #f383f4;">Hi,</h1>
+
+          <h2 style="margin: 30px; color: #725cbe">I am Aravinth Sakthivel,</h2>
+          <h2 style="margin: 0px 0px 50px 27px; color: #725cbe">Full Stack Developer</h2>
+
+
+          <div class="container">
+
+            <a href="aravinth resume (5).pdf" download class="button"
+              >Download Resume</a
+            >
+
+          </div>
+          <p style="margin:30px;border-bottom: 3px solid  #f383f4;color: #725cbe;">The Emerging Innovating Web Devloper</p>
+
+        </div>
+        <div class="col-md-6 cube-container">
+          <div class="cube">
+            <img
+              class="face"
+              src="https://cdn0.iconfinder.com/data/icons/fillicons-information-technology/1550/programmer_software_developer-1024.png"
+              alt=""
+            />
+            <img
+              class="face"
+              src="https://freeiconshop.com/wp-content/uploads/edd/html-outline.png"
+              alt=""
+            />
+            <img
+              class="face"
+              src="http://cdn.onlinewebfonts.com/svg/img_487451.png"
+              alt=""
+            />
+            <img
+              class="face"
+              src="https://oneteamsolutions.in/blogoneteam/wp-content/uploads/2020/05/REACT-JS-KOCHI.png"
+              alt=""
+            />
+            <img
+              class="face"
+              src="https://freeiconshop.com/wp-content/uploads/edd/js-outline.png"
+              alt=""
+            />
+            <img
+              class="face"
+              src="https://steppingstone.in/images/logos/bootstrap.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="about" class="row">
+      <div class="col-md-6 cube-container">
+        <div class="cube1"></div>
+      </div>
+      <div class="col-md-6 text-column">
+        <h2 style="margin-bottom: 30px; font-size: 50px;color: #f383f4;">About Me</h2>
+        <h5 style="margin-bottom: 30px; color: #725cbe;line-height: 2.0;">
+          Welcome to my portfolio! <br />
+          I am a passionate frontend developer with experience in creating
+          responsive and user-friendly web applications. My skills include HTML,
+          CSS, JavaScript, and various frontend frameworks such as Bootstrap,
+          Tailwind CSS.
+        </h5>
+       
+      </div>
+    </div>
+
+    <section id="skills">
+      <div class="row">
+        <div class="col-md-6 container">
+          <h2 style="margin-bottom: 30px; font-size: 50px;color: #f383f4;">Skills</h2>
+          <ul style="margin-bottom: 30px; color: #725cbe;line-height: 1.5;">
+            <li>HTML-Used to make Structure of the Website.</li>
+            <li>CSS- Trying New Innovative Animation using PRESPECTIVE-3D</li>
+            <li>
+              BOOTSTRAP- Expert in Mobile Responsive Websites using BOOTSTRAP
+            </li>
+            <li>JAVASCRIPT- Logical Solving Skill in JAVASCRIPT</li>
+            <li>JQUERY-Basics to Simplify the JAVASCRIPT</li>
+            <li>
+              REACT- Using This Library to make some Interesting Front End
+              Projects
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6 container">
+          <img src="skills-removebg-preview.png" alt="" class="img-fluid" />
+        </div>
+      </div>
+    </section>
+
+    <div id="projects" class="container-bg">
+      <div class="row carr">
+        <section id="project-1" class="col-md-6">
+          <h2 style="color: #f383f4">Project-1</h2>
+          <div class="card project-card">
+            <div class="card-body">
+              <h5 class="card-title text-warning">Solar system</h5>
+              <p class="card-text">
+                Using HTML and CSS Animation to Create Solar System.
+              </p>
+              <a href="solar.html" class="btn btn-warning">View Project</a>
+            </div>
+          </div>
+        </section>
+
+        <section  id="project-2" class="col-md-6">
+          <h2 style="color: #f383f4;">Project-2</h2>
+          <div class="card project-card">
+            <div class="card-body">
+              <h5 class="card-title text-warning">Cards Using Animation</h5>
+              <p class="card-text">
+                Using HTML and CSS Animation to Create Cards.
+              </p>
+              <a href="cards.html" class="btn btn-warning">View Project</a>
+            </div>
+          </div>
+        </section>
+
+        <section id="project-3" class="col-md-6">
+          <h2 style="color: #f383f4">Project-3</h2>
+          <div class="card project-card">
+            <div class="card-body">
+              <h5 class="card-title text-warning">
+                Book Opening Like Animation
+              </h5>
+              <p class="card-text">
+                Using HTML and CSS Animation to Create Cards.
+              </p>
+              <a href="spllitcard.html" class="btn btn-warning">View Project</a>
+            </div>
+          </div>
+        </section>
+        <section id="project-5" class="col-md-6">
+            <h2 style="color: #f383f4">Project-4</h2>
+            <div class="card project-card">
+              <div class="card-body">
+                <h5 class="card-title text-warning">Calculator</h5>
+                <p class="card-text">
+                  Using HTML and CSS and Javascript to Create Calculator
+                </p>
+                <a href="calculaator.html" class="btn btn-warning"
+                  >View Project</a
+                >
+              </div>
+            </div>
+          </section>
+
+        <section id="project-4" class="col-md-6">
+          <h2 style="color: #f383f4">Project-5</h2>
+          <div class="card project-card">
+            <div class="card-body">
+              <h5 class="card-title text-warning">Tourist Companion Website</h5>
+              <p class="card-text">
+                Using HTML and CSS Animation to Create Tourist Companion.
+              </p>
+              <a href="ecoomer.html" class="btn btn-warning">View Project</a>
+            </div>
+          </div>
+        </section>
+
+       
+
+        <section id="project-6" class="col-md-6">
+          <h2 style="color: #f383f4">Project-6</h2>
+          <div class="card project-card">
+            <div class="card-body">
+              <h5 class="card-title text-warning">TMTB -Movie Fake API</h5>
+              <p class="card-text">
+                Using HTML and CSS and Javascript to Create TMTB -Movie Fake API
+              </p>
+              <a href="tmtb2.html" class="btn btn-warning">View Project</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <section>
+        <div id="contact" class="container-link text-center">
+          <div class="links">
+            <h2 style="color: #f383f4;margin-bottom: 30px;">Links</h2>
+          </div>
+          <div class="imgg">
+            <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" class="link-item">
+              <div class="square">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/768px-LinkedIn_logo_initials.png" alt="" />
+                <h5>Linkedin</h5>
+              </div>
+            </a>
+            <a href="https://github.com/Aravinth0105" class="link-item">
+              <div class="square">
+                <img src="http://www.pngall.com/wp-content/uploads/2016/04/Github-PNG-Image.png" alt="" />
+                <h5>GItHub</h5>
+              </div>
+            </a>
+            <a href="mailto:arivuaravinth0105@gmail.com?subject=Hello%20There&body=I%20would%20like%20to%20connect%20with%20you!" class="link-item">
+              <div class="square">
+                <img src="https://purepng.com/public/uploads/medium/purepng.com-gmail-icon-android-kitkatsymbolsiconsapp-iconsandroid-kitkatandroid-44-721522597631stolw.png" alt="" />
+                <h5>Gmail</h5>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+      
+
+    <footer>
+      <p style="text-align: center;background-color: #f383f4;padding: 20px;">&copy; Aravinth. Ready To Work.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+
+    <script>
+      window.addEventListener("scroll", function () {
+        var windowWidth = window.innerWidth;
+
+        if (windowWidth >= 600) {
+          var scrollTop = window.scrollY;
+          var rowOffset = document.querySelector(".row").offsetTop;
+          var cubeContainer = document.querySelector(".cube-container");
+
+          if (scrollTop > rowOffset + 70) {
+            document.querySelector(".row").classList.add("active");
+            cubeContainer.style.transition = "transform 0.50s ease";
+            cubeContainer.style.transform =
+              "translateY(250%) translateX(-130%)";
+          } else {
+            document.querySelector(".row").classList.remove("active");
+            cubeContainer.style.transition = "transform 0.50s ease";
+            cubeContainer.style.transform = "translateY(0) translateX(0)";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

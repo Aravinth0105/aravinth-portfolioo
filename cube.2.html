@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+        
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+        }
+        .flip-container { 
+            perspective: 1000px;
+            width: 200px;
+            height: 200px;
+            margin: 50px auto;
+        }
+        .front,
+        .back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+        }
+        .flip-container:hover .flipper {
+            transform: rotateY(180deg);
+        }
+        .back {
+            transform: rotateY(180deg);
+        }
+
+         .flipper {
+            transition: 0.6s;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+
+        .front,
+        .back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+        }
+    </style> 
+</head>
+<body>
+
+<div class="flip-container">
+    <div class="flipper">
+        <div class="front">
+            <img src="https://r1.ilikewallpaper.net/ipad-pro-wallpapers/download/37917/Spiderman-hero-ipad-pro-wallpaper-ilikewallpaper_com.jpg" alt="Front Image" class="img-fluid" />
+        </div>
+        <div class="back">
+            <img src="https://i.redd.it/l0vzskvv56d31.jpg" alt="Back Image" class="img-fluid" />
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
